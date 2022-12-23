@@ -34,17 +34,15 @@ def test_filling_form():
     browser.element('#react-select-4-input').type('Noida').press_enter()
     browser.element('#submit').press_enter()
 
-    browser.element('#example-modal-sizes-title-lg').should(have.text('Thanks for submitting the form'))
-    browser.element('.table').should(have.text(
-        'Ksenia'
-        and 'Kapranova'
-        and 'ksenya14039@mail.ru'
-        and 'Female'
-        and '9973655228'
-        and '9 October,1997'
-        and 'English'
-        and 'Reading'
-        and 'wepk.jpeg'
-        and 'Moscow'
-        and 'NCR Noida'
+    browser.all('.table-responsive td:nth-child(2)').should(have.texts(
+        'Ksenia Kapranova',
+        'ksenya14039@mail.ru',
+        'Female',
+        '9973655228',
+        '9 October,1997',
+        'English',
+        'Reading',
+        'wepk.jpeg',
+        'Moscow',
+        'NCR Noida'
     ))
